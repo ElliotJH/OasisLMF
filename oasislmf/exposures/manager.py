@@ -462,7 +462,7 @@ class OasisExposuresManager(implements(OasisExposuresManagerInterface)):
 
         tiv_fields = sorted(
             filter(lambda v: v.get('FieldName') == 'TIV', six.itervalues(canonical_exposures_profile)),
-            key=lambda x: x.keys()
+            key=lambda v: v['FMTermGroupID']
         )
 
         columns = [
