@@ -461,7 +461,8 @@ class OasisExposuresManager(implements(OasisExposuresManagerInterface)):
             keys_df.columns = keys_df.columns.str.lower()
 
         tiv_fields = sorted(
-            filter(lambda v: v.get('FieldName') == 'TIV', six.itervalues(canonical_exposures_profile))
+            filter(lambda v: v.get('FieldName') == 'TIV', six.itervalues(canonical_exposures_profile)),
+            key=lambda x: x.keys()
         )
 
         columns = [
